@@ -18,5 +18,8 @@ import './commands'
 
 require('cypress-xpath')
 
+// Cypress.SelectorPlayground.defaults({
+//        selectorPriority: ['data-cy', 'data-test', 'data-testid', 'id', 'class', 'atributes', 'tags', 'nth-child']
+// })
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

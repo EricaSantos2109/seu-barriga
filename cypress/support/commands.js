@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import { add } from 'cypress/types/lodash'
 import loc from './locators'
 
 Cypress.Commands.add('login', (user, passwd) => {
@@ -41,5 +42,20 @@ Cypress.Commands.add('resetApp', () => {
     cy.get(loc.MENU.RESET).click()
     cy.get(loc.MESSAGE).should('contain', 'Dados resetados com sucesso!')
     cy.get('.toast-close-button').click()
+})
+
+Cypress.Commands.add('getToken', (user, passwd) => {
+    cy.request({
+        method: 'POST',
+        url: 'https://barrigarest.wcaquino.me/signin',
+        body: {
+            email: user,
+            redirecionar: false,
+            senha: passwd
+        }
+    }).its('body.token').should('not.be.empty')
+        .then(token => {
+            return token
+        })
 })
 

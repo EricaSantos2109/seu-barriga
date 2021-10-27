@@ -7,9 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricaSantos2109/seu-barriga.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricaSantos2109/seu-barriga/issues"
+  },
+  "homepage": "https://github.com/EricaSantos2109/seu-barriga#readme",
   "dependencies": {
     "cypress": "^3.6.0",
     "cypress-xpath": "^1.6.2"
