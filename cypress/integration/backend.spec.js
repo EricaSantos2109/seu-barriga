@@ -1,5 +1,7 @@
 /// <reference types="cypress"/>
 
+import '../support/commands'
+
 describe('Should test at functional level', () => {
     let token
     
@@ -19,14 +21,14 @@ describe('Should test at functional level', () => {
             method: 'POST',
             headers: { Authorization: `JWT ${token}` },
             body: {
-                nome: 'Conta via restt'
+                nome: 'Conta topper'
             }
         }).as('response')
 
         cy.get('@response').then(res => {
             expect(res.status).to.be.equal(201)
             expect(res.body).to.have.property('id')
-            expect(res.body).to.have.property('nome', 'Conta via resttt')
+            expect(res.body).to.have.property('nome', 'Conta topper')
         })
     })
 

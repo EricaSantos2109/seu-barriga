@@ -24,7 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import { add } from 'cypress/types/lodash'
 import loc from './locators'
 
 Cypress.Commands.add('login', (user, passwd) => {
