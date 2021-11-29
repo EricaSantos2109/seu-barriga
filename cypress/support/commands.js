@@ -28,8 +28,8 @@ import loc from './locators'
 
 Cypress.Commands.add('login', (user, passwd) => {
     cy.visit('https://barrigareact.wcaquino.me/')
-    cy.get(loc.LOGIN.USER).type('ericatm')
-    cy.get(loc.LOGIN.PASSWORD).type('123456789tm')
+    cy.get(loc.LOGIN.USER).type(user)
+    cy.get(loc.LOGIN.PASSWORD).type(passwd)
     cy.get(loc.LOGIN.BTN_LOGIN).click()
     cy.get(loc.MESSAGE).should('contain', 'Bem vindo')
     cy.get('.toast-info > .toast-close-button').click()
